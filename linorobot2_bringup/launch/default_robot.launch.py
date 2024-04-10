@@ -31,41 +31,41 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        DeclareLaunchArgument(
-            name='base_serial_port', 
-            default_value='/dev/ttyACM0',
-            description='Linorobot Base Serial Port'
-        ),
+        # DeclareLaunchArgument(
+        #     name='base_serial_port', 
+        #     default_value='/dev/ttyACM0',
+        #     description='Linorobot Base Serial Port'
+        # ),
 
-        DeclareLaunchArgument(
-            name='micro_ros_transport',
-            default_value='serial',
-            description='micro-ROS transport'
-        ),
+        # DeclareLaunchArgument(
+        #     name='micro_ros_transport',
+        #     default_value='serial',
+        #     description='micro-ROS transport'
+        # ),
 
-        DeclareLaunchArgument(
-            name='micro_ros_port',
-            default_value='8888',
-            description='micro-ROS udp/tcp port number'
-        ),
+        # DeclareLaunchArgument(
+        #     name='micro_ros_port',
+        #     default_value='8888',
+        #     description='micro-ROS udp/tcp port number'
+        # ),
 
-        Node(
-            condition=LaunchConfigurationEquals('micro_ros_transport', 'serial'),
-            package='micro_ros_agent',
-            executable='micro_ros_agent',
-            name='micro_ros_agent',
-            output='screen',
-            arguments=['serial', '--dev', LaunchConfiguration("base_serial_port")]
-        ),
+        # Node(
+        #     condition=LaunchConfigurationEquals('micro_ros_transport', 'serial'),
+        #     package='micro_ros_agent',
+        #     executable='micro_ros_agent',
+        #     name='micro_ros_agent',
+        #     output='screen',
+        #     arguments=['serial', '--dev', LaunchConfiguration("base_serial_port")]
+        # ),
 
-        Node(
-            condition=LaunchConfigurationEquals('micro_ros_transport', 'udp4'),
-            package='micro_ros_agent',
-            executable='micro_ros_agent',
-            name='micro_ros_agent',
-            output='screen',
-            arguments=[LaunchConfiguration('micro_ros_transport'), '--port', LaunchConfiguration('micro_ros_port')]
-        ),
+        # Node(
+        #     condition=LaunchConfigurationEquals('micro_ros_transport', 'udp4'),
+        #     package='micro_ros_agent',
+        #     executable='micro_ros_agent',
+        #     name='micro_ros_agent',
+        #     output='screen',
+        #     arguments=[LaunchConfiguration('micro_ros_transport'), '--port', LaunchConfiguration('micro_ros_port')]
+        # ),
     
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(description_launch_path)

@@ -5,7 +5,7 @@
       <Interfaces>
         <NetworkInterface name="lo"/>
       </Interfaces>
-      <AllowMulticast>false</AllowMulticast>
+      <AllowMulticast>true</AllowMulticast>
     </General>
     <Discovery>
       <ParticipantIndex>auto</ParticipantIndex>

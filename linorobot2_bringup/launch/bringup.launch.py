@@ -63,23 +63,23 @@ def generate_launch_description():
             description='Launch extra launch file'
         ),
 
-        DeclareLaunchArgument(
-            name='base_serial_port', 
-            default_value='/dev/ttyACM0',
-            description='Linorobot Base Serial Port'
-        ),
+        # DeclareLaunchArgument(
+        #     name='base_serial_port', 
+        #     default_value='/dev/ttyACM0',
+        #     description='Linorobot Base Serial Port'
+        # ),
 
-        DeclareLaunchArgument(
-            name='micro_ros_transport',
-            default_value='serial',
-            description='micro-ROS transport'
-        ),
+        # DeclareLaunchArgument(
+        #     name='micro_ros_transport',
+        #     default_value='serial',
+        #     description='micro-ROS transport'
+        # ),
 
-        DeclareLaunchArgument(
-            name='micro_ros_port',
-            default_value='8888',
-            description='micro-ROS udp/tcp port number'
-        ),
+        # DeclareLaunchArgument(
+        #     name='micro_ros_port',
+        #     default_value='8888',
+        #     description='micro-ROS udp/tcp port number'
+        # ),
 
         DeclareLaunchArgument(
             name='odom_topic', 
@@ -104,21 +104,21 @@ def generate_launch_description():
             remappings=[("odometry/filtered", LaunchConfiguration("odom_topic"))]
         ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(default_robot_launch_path),
-            condition=UnlessCondition(LaunchConfiguration("custom_robot")),
-            launch_arguments={
-                'base_serial_port': LaunchConfiguration("base_serial_port")
-            }.items()
-        ),
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(default_robot_launch_path),
+        #     condition=UnlessCondition(LaunchConfiguration("custom_robot")),
+        #     launch_arguments={
+        #         'base_serial_port': LaunchConfiguration("base_serial_port")
+        #     }.items()
+        # ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(extra_launch_path),
-            condition=IfCondition(LaunchConfiguration("extra")),
-        ),
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(extra_launch_path),
+        #     condition=IfCondition(LaunchConfiguration("extra")),
+        # ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(custom_robot_launch_path),
-            condition=IfCondition(LaunchConfiguration("custom_robot")),
-        )
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(custom_robot_launch_path),
+        #     condition=IfCondition(LaunchConfiguration("custom_robot")),
+        # )
     ])
