@@ -25,7 +25,7 @@ WORKSPACE="/root/linorobot2_ws"
 
 ROBOT_TYPE_ARRAY=(2wd 4wd mecanum)
 DEPTH_SENSOR_ARRAY=(realsense zed zedm zed2 zed2i oakd oakdlite oakdpro)
-LASER_SENSOR_ARRAY=(ydlidar xv11 ld06 ld19 stl27l a1 a2 a3 c1 s1 s2 s3)
+LASER_SENSOR_ARRAY=(ydlidar xv11 ld06 ld19 stl27l a1 a2 a3 c1 s1 s2 s3 ldlidar)
 LASER_SENSOR_ARRAY+=(${DEPTH_SENSOR_ARRAY[@]})
 
 if [ -z "$LASER_SENSOR" ]
@@ -71,6 +71,13 @@ function install_ydlidar {
     git clone https://github.com/YDLIDAR/ydlidar_ros2_driver src/ydlidar_ros2_driver
     chmod 0777 src/ydlidar_ros2_driver/startup/*
     colcon build --symlink-install
+    source $WORKSPACE/install/setup.bash
+}
+
+function install_ldlidar {
+    cd $WORKSPACE
+    git clone https://github.com/linorobot/ldlidar src/ldlidar
+    colcon build
     source $WORKSPACE/install/setup.bash
 }
 
