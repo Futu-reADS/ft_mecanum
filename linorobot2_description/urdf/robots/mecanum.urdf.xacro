@@ -62,6 +62,14 @@
   <xacro:generic_laser>
     <xacro:insert_block name="laser_pose" />
   </xacro:generic_laser>
+
+  <xacro:generic_base_f_laser>
+    <xacro:insert_block name="base_f_laser_pose" />
+  </xacro:generic_base_f_laser>
+
+  <xacro:generic_base_r_laser>
+    <xacro:insert_block name="base_r_laser_pose" />
+  </xacro:generic_base_r_laser>
   
   <xacro:depth_sensor>
     <xacro:insert_block name="depth_sensor_pose" />

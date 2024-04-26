@@ -17,6 +17,14 @@
     <origin xyz="0 0 0.575" rpy="0 0 0"/>
   </xacro:property>
 
+  <xacro:property name="base_f_laser_pose">
+    <origin xyz="0.25 0 -0.35" rpy="0 0 0"/>
+  </xacro:property>
+
+  <xacro:property name="base_r_laser_pose">
+    <origin xyz="-0.25 0 -0.35" rpy="0 0 3.1416"/>
+  </xacro:property>
+  
   <xacro:property name="depth_sensor_pose">
     <origin xyz="0.225 0 0.1" rpy="0 0 0"/>
   </xacro:property>

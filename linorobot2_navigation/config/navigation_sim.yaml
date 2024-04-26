@@ -187,7 +187,7 @@ global_costmap:
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: true
-        observation_sources: scan base_scan
+        observation_sources: scan base_scan_f base_scan_r
         footprint_clearing_enabled: true
         max_obstacle_height: 2.0
         combination_method: 1
@@ -203,8 +203,20 @@ global_costmap:
           marking: true
           data_type: "LaserScan"
           inf_is_valid: false
-        base_scan:
-          topic: /base/scan
+        base_scan_f:
+          topic: /base/scan/f
+          obstacle_max_range: 2.5
+          obstacle_min_range: 0.0
+          raytrace_max_range: 3.0
+          raytrace_min_range: 0.0
+          max_obstacle_height: 2.0
+          min_obstacle_height: 0.0
+          clearing: true
+          marking: true
+          data_type: "LaserScan"
+          inf_is_valid: false
+        base_scan_r:
+          topic: /base/scan/r
           obstacle_max_range: 2.5
           obstacle_min_range: 0.0
           raytrace_max_range: 3.0
@@ -273,7 +285,7 @@ local_costmap:
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: true
-        observation_sources: scan base_scan
+        observation_sources: scan base_scan_f base_scan_r
         footprint_clearing_enabled: true
         max_obstacle_height: 2.0
         combination_method: 1
@@ -289,8 +301,20 @@ local_costmap:
           marking: true
           data_type: "LaserScan"
           inf_is_valid: false
-        base_scan:
-          topic: /base/scan
+        base_scan_f:
+          topic: /base/scan/f
+          obstacle_max_range: 2.5
+          obstacle_min_range: 0.0
+          raytrace_max_range: 3.0
+          raytrace_min_range: 0.0
+          max_obstacle_height: 2.0
+          min_obstacle_height: 0.0
+          clearing: false
+          marking: true
+          data_type: "LaserScan"
+          inf_is_valid: false
+        base_scan_r:
+          topic: /base/scan/r
           obstacle_max_range: 2.5
           obstacle_min_range: 0.0
           raytrace_max_range: 3.0
