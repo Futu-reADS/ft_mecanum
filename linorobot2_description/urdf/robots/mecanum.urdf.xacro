@@ -71,9 +71,9 @@
     <xacro:insert_block name="base_r_laser_pose" />
   </xacro:generic_base_r_laser>
   
-  <xacro:depth_sensor>
+  <!-- <xacro:depth_sensor>
     <xacro:insert_block name="depth_sensor_pose" />
-  </xacro:depth_sensor>
+  </xacro:depth_sensor> -->
 
   <xacro:omni_drive_controller/>
 </robot>
